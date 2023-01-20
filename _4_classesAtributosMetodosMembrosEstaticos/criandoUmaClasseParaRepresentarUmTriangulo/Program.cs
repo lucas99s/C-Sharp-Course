@@ -18,7 +18,7 @@ namespace _2_CriandoUmaClasseParaRepresentarUmTriangulo
             x.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             x.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            double areaX = x.Area(x.A, x.B, x.C);
+            double areaX = x.Area();
 
             Console.WriteLine("Entre com as medidas do trinângulo Y: ");
 
@@ -26,7 +26,7 @@ namespace _2_CriandoUmaClasseParaRepresentarUmTriangulo
             y.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            double areaY = y.Area(y.A, y.B, y.C);
+            double areaY = y.Area();
 
             Console.WriteLine("Área de X = " + areaX.ToString("F4", CultureInfo.InvariantCulture));
             Console.WriteLine("Área de Y = " + areaY.ToString("F4", CultureInfo.InvariantCulture));

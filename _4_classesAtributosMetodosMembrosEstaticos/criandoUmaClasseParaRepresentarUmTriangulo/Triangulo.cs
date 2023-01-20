@@ -8,17 +8,15 @@ namespace _2_CriandoUmaClasseParaRepresentarUmTriangulo
         public double B;
         public double C;
 
-        public double Perimetro(double a, double b, double c)
+        public double Perimetro()
         {
-            double perimetro = (a + b + c) / 2;
-            return perimetro;
+            return (A + B + C) / 2; ;
         }
 
-        public double Area(double a, double b, double c)
+        public double Area()
         {
-            double p = Perimetro(a, b, c);
-            double area = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
-            return area;
+            double p = Perimetro();
+            return Math.Sqrt(p * (p - A) * (p - B) * (p - C));
         }
     }
 }
