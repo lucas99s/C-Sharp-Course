@@ -22,8 +22,6 @@ namespace _2_Sobrecarga
         //Usos do this
         public Produto(string Nome, double Preco, int Quantidade) : this(Nome, Preco) //Reaproveitando o construtor de dois atributos acima.
         {
-            this.Nome = Nome;
-            this.Preco = Preco;
             this.Quantidade = Quantidade;
         }
 
