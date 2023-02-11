@@ -11,9 +11,9 @@ namespace _13_Exercicio
         {
             int[,] matrix = new int[int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine())];
 
+            Console.WriteLine($"Matrix: {matrix.GetLength(0)}, {matrix.GetLength(1)}");
             for(int i = 0; i < matrix.GetLength(0); i++)
             {
-                Console.WriteLine("Matrix: ");
                 string[] values = Console.ReadLine().Split(' ');
                 for(int j = 0; j < matrix.GetLength(1); j++)
                 {
@@ -22,10 +22,6 @@ namespace _13_Exercicio
             }
 
             int searchValue = int.Parse(Console.ReadLine());
-            int top;
-            int bottom;
-            int left;
-            int right;
 
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
@@ -33,16 +29,23 @@ namespace _13_Exercicio
                 {
                     if(matrix[i, j] == searchValue)
                     {
-                        Console.WriteLine("Position: " + matrix[i, j]);
-                        top = matrix[i - 1, j];
-                        bottom = matrix[i + 1, j];
-                        left = matrix[i, j - 1];
-                        right = matrix[i, j + 1];
-
-                        Console.WriteLine($"Top: {top}");
-                        Console.WriteLine($"Bottom: {bottom}");
-                        Console.WriteLine($"Left: {left}");
-                        Console.WriteLine($"Right: {right}");
+                        Console.WriteLine();
+                        Console.WriteLine($"Position: {i}, {j}");
+                        if(i - 1 >= 0) {
+                            Console.WriteLine($"Top: {matrix[i - 1, j]}");
+                        }
+                        if(i + 1 < matrix.GetLength(0))
+                        {
+                            Console.WriteLine($"Bottom: {matrix[i + 1, j]}");
+                        }
+                        if(j - 1 >= 0)
+                        {
+                            Console.WriteLine($"Left: {matrix[i, j - 1]}");
+                        }
+                        if(j + 1 < matrix.GetLength(1) )
+                        {
+                            Console.WriteLine($"Right: {matrix[i, j + 1]}");
+                        }
                     }
                 }
             }
