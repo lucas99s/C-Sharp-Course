@@ -7,9 +7,10 @@
         public Product Product { get; set; }
 
         public OrderItem() { }
-        public OrderItem(int quantity)
+        public OrderItem(int quantity, Product product)
         {
             Quantity = quantity;
+            Product = product;
             Price = Product.Price;
         }
 

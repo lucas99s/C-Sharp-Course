@@ -14,10 +14,11 @@ namespace _4_Exercicio_3.Entities
 
         public Order() { }
 
-        public Order(DateTime moment, OrderStatus status)
+        public Order(DateTime moment, OrderStatus status, Client client)
         {
             Moment = moment;
             Status = status;
+            Client = client;
         }
 
         public void AddItem(OrderItem item)
@@ -45,17 +46,17 @@ namespace _4_Exercicio_3.Entities
             StringBuilder s = new StringBuilder();
             s.AppendLine("ORDER SUMARY:");
             s.Append("Order moment: ");
-            s.AppendLine(Moment.ToString("dd/MM/yyyy HH/mm/ss"));
+            s.AppendLine(Moment.ToString("dd/MM/yyyy HH:mm:ss"));
             s.Append("Order status: ");
             s.AppendLine(Status.ToString());
             s.Append("Client: ");
-            s.AppendLine($"{Client.Name} ({Client.BirthDate}) - {Client.Email}");
+            s.AppendLine($"{Client.Name} ({Client.BirthDate.ToString("dd/MM/yyyy")}) - {Client.Email}");
             s.AppendLine("Order items:");
             foreach(OrderItem i in Items)
             {
-                s.AppendLine($"{i.Product.Name} $ {i.Price}, {i.SubTotal()}");
+                s.AppendLine($"{i.Product.Name}, ${i.Price}, quantity: {i.Quantity}, subtotal: ${i.SubTotal().ToString("F2")}");
             }
-            s.AppendLine(Total().ToString());
+            s.AppendLine($"Total price ${Total().ToString("F2")}");
             return s.ToString();
         }
     }

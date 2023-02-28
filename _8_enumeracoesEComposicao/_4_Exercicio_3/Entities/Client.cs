@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace _4_Exercicio_3.Entities
 {
@@ -9,5 +7,13 @@ namespace _4_Exercicio_3.Entities
         public string Name { get; set; }
         public string Email { get; set; }
         public DateTime BirthDate { get; set; }
+
+        public Client() { }
+        public Client(string name, string email, DateTime birthDate)
+        {
+            Name = name;
+            Email = email;
+            BirthDate = birthDate;
+        }
     }
 }
