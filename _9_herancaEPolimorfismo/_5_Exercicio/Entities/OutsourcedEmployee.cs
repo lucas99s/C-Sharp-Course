@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace _5_Exercicio.Entities
+﻿namespace _5_Exercicio.Entities
 {
     class OutsourcedEmployee : Employee
     {
